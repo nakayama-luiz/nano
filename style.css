@@ -1,0 +1,13 @@
+.center {
+    margin: 0;
+    justify-content: center;
+    display: flex;
+}
+
+.tamanho {
+    font-size: xx-large;
+}
+
+.cores {
+    color: #27db3f
+}
