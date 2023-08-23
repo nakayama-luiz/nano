@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import sqlite3
+import user
 
 app = Flask(__name__)
 
@@ -7,8 +8,12 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # return redirect('https://api.kanye.rest/')
-    return render_template("index.html")
+    return render_template("selector.html")
 
+@app.route('/all_users', methods=['GET'])
+def show_all_users():
+    print('entrou')
+    return user.all_users()
 
 @app.route('/insert_user', methods=['POST'])
 def insert_user():
