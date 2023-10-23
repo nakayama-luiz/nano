@@ -1,10 +1,10 @@
 import sqlite3
 
 
-def insert_work(work):
+def insert_work(work, goal):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
-    cursor.execute(f"insert into work (nome) values ('{work}')")
+    cursor.execute(f"insert into work (nome,meta) values ('{work}', '{goal}')")
     conn.commit()
     conn.close()
 
@@ -45,6 +45,5 @@ def update_work_total(id):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute(f"update work set word_total = (select sum(s.words) from sprint s) where codwork = {id}")
-    usuario = cursor.fetchall()
     conn.commit()
     conn.close()

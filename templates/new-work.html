@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New Work</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<style>
+    body {
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Vincent_van_Gogh_-_Head_of_a_skeleton_with_a_burning_cigarette_-_Google_Art_Project.jpg');
+    }
+
+    .centralizaar {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <script>
+        function resetForm() {
+            // Limpa os campos do formulário
+            document.getElementById("myForm").reset();
+            return false; // Retorna false para evitar o envio real do formulário
+        }
+        </script>
+    <div class="container mt-5">
+        <div class="card-body" role="alert">
+            <!-- <div class="centralizaar">
+                <a class="btn" href="http://localhost:5000/home" style="font-size: xx-large;">RETORNE AO MENU</a>
+            </div> -->
+            <div class="centralizaar">
+                <div class="card" style="width: 80%;">
+                    <div class="card-body" style="width: auto;">
+                        <div class="centralizaar">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h1>Create Project</h1>
+                                </div>
+                            </div>
+    
+                        </div>
+                        <br>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h2>Project Name</h2>
+                                    
+                                </div>
+                                <div class="col-6">
+                                    <h2>Start date</h2>
+                                </div>
+                                
+                                
+                            </div>
+                            <form id="myForm" action="http://localhost:5000/create_work" method="post">
+                            <div class="row">
+                                <div class="col-6">
+                                    <input required type="text" class="form-control textbox-dg" name="work_name"
+                                        placeholder="Project Name">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control textbox-dg" name="work_S_date"
+                                        placeholder="Start Date">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h2>Word-Count Goal</h2>
+                                </div>
+                                <div class="col-6">
+                                    <h2>Final</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input required type="text" class="form-control textbox-dg" name="word_goal"
+                                        placeholder="Goal">
+                                </div>
+                                <div class="col-6">
+                                    <input  type="text" class="form-control textbox-dg" name="word_F_datel"
+                                        placeholder="Final">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="d-flex justify-content-start">
+                                        <a href="http://localhost:5000/" class="btn btn-danger btn-block logn-btn"
+                                            style="width: 50%; margin-top: 15px;">CANCEL</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-primary btn-block logn-btn"
+                                            style="width: 50%; margin-top: 15px;">CREATE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

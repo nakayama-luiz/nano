@@ -42,14 +42,22 @@ def insert_user():
 def insert_word():
     if request.method == 'POST':
         print("entrando.")
-        namen = request.form['workName']
-        work.insert_work(work=namen)
-        return render_template("sucess.html")
+        arbeit_namen = request.form['work_name']
+        goal = request.form['word_goal']
+        work.insert_work(work=arbeit_namen, goal=goal)
+        return render_template("works.html")
 
 @app.route('/works', methods=['GET'])
 def works():
     return render_template("works.html")
 
+@app.route('/work_control')
+def create_work():
+    return render_template("new-work.html")
+
+@app.route('/insert_sprint')
+def insert_sprint():
+    return render_template("insert-sprint.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
