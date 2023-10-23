@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nano</title>
+    <style>
+        body {
+            background-image: url('https://artsdot.com/ADC/Art-ImgScreen-1.nsf/O/A-9GEQWP/$FILE/John-william-waterhouse-cleopatra.Jpg');
+        }
+        /* body {
+            background-image: url('opintassilgoorg.jpg');
+        } */
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@1.5.0/dist/htmx.min.js"></script>
+
+</head>
+
+<body>
+
+
+    
+
+    
+    <!-- <div class="center cores">
+        <h1>Inserir Usuário</h1>
+    </div> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="card container" style="width: 50%; margin-top: 10%;">
+        <div class="one">
+            <h1>Inserir Usuário</h1>
+        </div>
+        <div class="" style="margin-top: 10%;">
+            <strong>
+                <label class="tamanho cores" for="nome">NOME</label>
+            </strong>
+        </div>
+        <div class="">
+            <form method="post" action="http://localhost:5000/insert_user">
+                <br>
+                <label class="tamanho cores" for="nome">nome</label>
+                <div class="center">
+                    <input class="form-control" type="text" name="nome" style="width: 50%;" required>
+                </div>
+                <br>
+                <div class="center">
+                    <button class="btn btn-primary" style="width: 50%; margin-bottom: 5%;" type="submit">INSERIR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

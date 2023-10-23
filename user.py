@@ -40,7 +40,7 @@ def update_user_name(id, nome):
 def get_id_by_name(name):
   conn = sqlite3.connect('database.db')
   cursor = conn.cursor()
-  cursor.execute(f"select id from perfil where nome = '{name}' ")
+  cursor.execute(f"select * from perfil where nome = '{name}' ")
   usuario = cursor.fetchall()
   conn.commit()
   conn.close()
