@@ -1,11 +1,13 @@
 import user
 import work
 import time
+import json
+dentro = work.get_all_work()
+jogadas = json.dumps(dentro)
 
-perfeitio = time.localtime()
-print(perfeitio.tm_year)
-supinpa = str(perfeitio.tm_year) +'-' +str(perfeitio.tm_mon)+'-' + str(perfeitio.tm_mday)
-print(supinpa)
+for x in dentro:
+    print(x[0])
+    print(x[1])
+    print(x[2])
 
-
-# print(work.update_work_total(2))
+print(jogadas)

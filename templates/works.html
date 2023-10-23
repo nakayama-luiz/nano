@@ -21,19 +21,76 @@
 </style>
 
 <body>
+    <script type="text/javascript">
+
+        fetch('http://localhost:5000/all_works')
+            .then(function (response) {
+                return response.json();
+            }).then(function (apiJsonData) {
+                renderDataInTheTable(apiJsonData);
+            })
+
+           // https://jsonplaceholder.typicode.com/todos
+        function renderDataInTheTable(todos) {
+            const mytable = document.getElementById("html-data-table");
+            let mentiras = 0;
+            todos.forEach((todo, index) => {
+                let newRow = document.createElement("tr");
+                Object.values(todo).forEach((value) => {
+                    let cell = document.createElement("td");
+                    if(mentiras === 1){
+                        let link = document.createElement("a");
+                        // cell.innerText = value;
+                        link.href = "google.com" + todo[0]; // Substitua "sua_pagina.html" pela URL da sua página
+                        link.innerText = value;
+                        cell.style.textAlign = "center";
+                        cell.appendChild(link);
+
+
+                    }else{
+                        cell.innerText = value;
+                        cell.style.textAlign = "center";
+
+                    }
+                    mentiras = mentiras + 1;
+
+                    newRow.appendChild(cell);
+                })
+                console.log(mentiras)
+                mytable.appendChild(newRow);
+                mentiras = 0;
+
+            });
+        }
+    </script>
+     
     <div class="container mt-5">
         <div class="centralizaar">
             <div class="card" style="width: 70%;">
                 <div class="card-body" role="alert">
                     <div class="centralizaar">
                         <h2 style=" font-weight: bold;" class="alert-heading">WORK LIST</h2>
+                        
                     </div>
                     <hr>
-                    
+                    <div class="centralizaar">
+                        <div id="data-table">
+                            <table id="html-data-table">
+                                <tr>
+                                    <th style="padding: 15px; text-align: center;">ID</th>
+                                    <th style="padding: 15px; text-align: center;">title</th>
+                                    <th style="padding: 15px; text-align: center;">words total</th>
+                                    <th style="padding: 15px; text-align: center;">goal</th>
+                                </tr>
+                            </table>    
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    
 </body>
 
 </html>

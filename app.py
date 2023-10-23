@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import sqlite3
 import work
+import json
+from flask_cors import CORS
 
 app = Flask(__name__, static_url_path='/static')
+CORS(app)
 
 
 @app.route('/')
@@ -17,13 +20,11 @@ def who():
 def home():
     return render_template("home.html")
 
-@app.route('/all_profies', methods=['GET'])
+@app.route('/all_works', methods=['GET'])
 def profiles():
-    dicios = {
-        "teste": 1
-    }
-    print('jogos')
-    return jsonify(dicios)
+    pre_requisite = work.get_all_work()
+
+    return jsonify(pre_requisite)
 
 @app.route('/insert_user', methods=['POST'])
 def insert_user():
@@ -46,7 +47,7 @@ def insert_word():
         return render_template("sucess.html")
 
 @app.route('/works', methods=['GET'])
-def work():
+def works():
     return render_template("works.html")
 
 
