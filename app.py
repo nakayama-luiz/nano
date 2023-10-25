@@ -55,7 +55,24 @@ def works():
 def create_work():
     return render_template("new-work.html")
 
-@app.route('/insert_sprint')
+@app.route('/list_project_name', methods=['GET'])
+def list_project_names():
+    future_names = work.get_all_work()
+    lista = []
+
+
+    for x in future_names:
+        nario = {
+            "work_id": x[0],
+            "work_name": x[1]
+        }
+        lista.append(nario)
+    # for name in future_names:
+    #     name_list.append(name[1])
+    return jsonify(lista)
+
+
+@app.route('/insert_sprint', methods=['GET'])
 def insert_sprint():
     return render_template("insert-sprint.html")
 

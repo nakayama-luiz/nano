@@ -27,19 +27,20 @@ def view_work(id):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute(f"select * from work where codwork = '{id}' ")
-    usuario = cursor.fetchall()
+    work = cursor.fetchall()
     conn.commit()
     conn.close()
-    return usuario[0]
+    return work[0]
 
 def get_all_work():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute(f"select * from work ")
-    usuario = cursor.fetchall()
+    works = cursor.fetchall()
     conn.commit()
     conn.close()
-    return usuario
+    return works
+
 
 def update_work_total(id):
     conn = sqlite3.connect('database.db')

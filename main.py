@@ -4,10 +4,17 @@ import time
 import json
 dentro = work.get_all_work()
 jogadas = json.dumps(dentro)
-
-for x in dentro:
-    print(x[0])
-    print(x[1])
-    print(x[2])
+lista = []
 
 print(jogadas)
+
+for x in dentro:
+    nario = {
+        "work_id": x[0],
+        "work_name": x[1]
+    }
+    lista.append(nario)
+
+
+print(lista)
+
