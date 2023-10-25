@@ -10,6 +10,12 @@
     <select id="ocrime">
     </select>
     <script>
+        function maior(){
+            const selectElement = document.getElementById("ocrime");
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const selectedValue = selectedOption.value;
+            console.log(selectedValue);
+        }
         fetch('http://localhost:5000/list_project_name')
             .then(function (response) {
                 return response.json();
@@ -30,6 +36,7 @@
         }
         
     </script>
+    <input onclick="maior()" type="button" value="nebturas">
 
 </body>
 </html>

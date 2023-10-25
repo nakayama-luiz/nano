@@ -60,15 +60,12 @@ def list_project_names():
     future_names = work.get_all_work()
     lista = []
 
-
     for x in future_names:
         nario = {
             "work_id": x[0],
             "work_name": x[1]
         }
         lista.append(nario)
-    # for name in future_names:
-    #     name_list.append(name[1])
     return jsonify(lista)
 
 
