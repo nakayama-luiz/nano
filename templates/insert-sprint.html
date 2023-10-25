@@ -6,67 +6,29 @@
     <title>new word count</title>
 </head>
 <body>
-    <form action="http://localhost:5000/list_project_name" method="get">
-        <select name="nomes" id="unico">
-            <option value="nomes">conforme</option>
-        </select>
-    </form>
+    
     <select id="ocrime">
-        <option value="">Selecione uma opção</option>
     </select>
     <script>
-        // fetch('http://localhost:5000/list_project_name')
-        //     .then(function (response) {
-        //         return response.json();
-        //     }).then(function (apiJsonData) {
-        //         renderOptions(apiJsonData);
-        //     })
-            
-        // function renderOptions(geral){
-        //     console.log(geral);
-        //     geral.forEach((gerals)=> {
-        //         let option = document.createElement("option")
-        //         Object.values(gerals).forEach((values =>{
-        //             const myOptions =document.getElementById("ocrime");
-        //             myOptions.innerText = values;
-        //             myOptions.innerHTML = values;
-        //         })) 
-        //     })
-        // }
         fetch('http://localhost:5000/list_project_name')
             .then(function (response) {
                 return response.json();
             }).then(function (apiJsonData) {
-                renderDataInTheTable(apiJsonData);
+                renderOptions(apiJsonData);
             })
-
-           // https://jsonplaceholder.typicode.com/todos
-        function renderDataInTheTable(todos) {
-            const mytable = document.getElementById("html-data-table");
-            todos.forEach((todo) => {
-                let newRow = document.createElement("tr");
-                Object.values(todo).forEach((value) => {
-                    let cell = document.createElement("td");
-                    
-                        let link = document.createElement("a");
-                        // cell.innerText = value;
-                        link.href = "google.com" + todo[0]; 
-                        link.innerText = value;
-                        cell.style.textAlign = "center";
-                        cell.appendChild(link);
-
-
-                    
-                        cell.innerText = value;
-                        cell.style.textAlign = "center";
-
-                    
-
-                    newRow.appendChild(cell);
-                })
-
-            });
+            const myOptions =document.getElementById("ocrime");
+            
+        function renderOptions(geral){
+            console.log(geral);
+            geral.forEach((gerals)=> {
+                    let option = document.createElement("option")
+                    console.log(gerals)
+                    option.text = gerals.work_name;
+                    option.value = gerals.work_id;
+                    myOptions.appendChild(option);
+            })
         }
+        
     </script>
 
 </body>
