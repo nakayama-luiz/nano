@@ -6,8 +6,8 @@
     <title>new word count</title>
 </head>
 <body>
-    
-    <select id="ocrime">
+    <form id="myForm" action="http://localhost:5000/add_sprint" method="post">
+    <select name="nao" id="ocrime">
     </select>
     <script>
         function maior(){
@@ -36,7 +36,11 @@
         }
         
     </script>
-    <input onclick="maior()" type="button" value="nebturas">
+    
+    <input type="text" class="form-control textbox-dg" name="word-count"
+    placeholder="Start Date">
+        <input onclick="maior()" type="submit" value="nebturas">
+    </form> 
 
 </body>
 </html>

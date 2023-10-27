@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, jsonify
 import sqlite3
 import work
+import sprint
 import json
 from flask_cors import CORS
 
@@ -46,6 +47,15 @@ def insert_word():
         goal = request.form['word_goal']
         work.insert_work(work=arbeit_namen, goal=goal)
         return render_template("works.html")
+    
+@app.route('/add_sprint', methods=['POST'])
+def add_sprint():
+    if request.method == 'POST':
+        print("entrando.")
+        work = request.form['nao']
+        word_count = request.form['word-count']
+        sprint.insert_sprint(word_count=word_count, work=work)
+        return f"inserido conm suceeeso {work} ganhou {word_count}"
 
 @app.route('/works', methods=['GET'])
 def works():
@@ -72,6 +82,9 @@ def list_project_names():
 @app.route('/insert_sprint', methods=['GET'])
 def insert_sprint():
     return render_template("insert-sprint.html")
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
