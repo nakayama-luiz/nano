@@ -25,18 +25,17 @@
 <body>
     <script>
         function resetForm() {
-            // Limpa os campos do formulário
             document.getElementById("myForm").reset();
-            return false; // Retorna false para evitar o envio real do formulário
+            return false; 
         }
-        </script>
+    </script>
     <div class="container mt-5">
         <div class="card-body" role="alert">
             <!-- <div class="centralizaar">
                 <a class="btn" href="http://localhost:5000/home" style="font-size: xx-large;">RETORNE AO MENU</a>
             </div> -->
             <div class="centralizaar">
-                <div class="card" style="width: 80%;">
+                <div class="card shadow" style="width: 80%;">
                     <div class="card-body" style="width: auto;">
                         <div class="centralizaar">
                             <div class="row">
@@ -44,9 +43,11 @@
                                     <h1>Create Project</h1>
                                 </div>
                             </div>
+
     
                         </div>
-                        <br>
+                        <hr style="height: 10px; color: black;">
+
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
@@ -59,6 +60,7 @@
                                 
                                 
                             </div>
+
                             <form id="myForm" action="http://localhost:5000/create_work" method="post">
                             <div class="row">
                                 <div class="col-6">
@@ -66,7 +68,7 @@
                                         placeholder="Project Name">
                                 </div>
                                 <div class="col-6">
-                                    <input type="text" class="form-control textbox-dg" name="work_S_date"
+                                    <input type="date" class="form-control textbox-dg" name="work_S_date"
                                         placeholder="Start Date">
                                 </div>
                             </div>
@@ -76,7 +78,7 @@
                                     <h2>Word-Count Goal</h2>
                                 </div>
                                 <div class="col-6">
-                                    <h2>Final</h2>
+                                    <h2>Final Date</h2>
                                 </div>
                             </div>
                             <div class="row">
@@ -85,7 +87,7 @@
                                         placeholder="Goal">
                                 </div>
                                 <div class="col-6">
-                                    <input  type="text" class="form-control textbox-dg" name="word_F_datel"
+                                    <input  type="date" class="form-control textbox-dg" name="word_F_datel"
                                         placeholder="Final">
                                 </div>
                             </div>

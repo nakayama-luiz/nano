@@ -48,3 +48,12 @@ def update_work_total(id):
     cursor.execute(f"update work set word_total = (select sum(s.words) from sprint s) where codwork = {id}")
     conn.commit()
     conn.close()
+
+def total_works():
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    isso = cursor.execute(f"SELECT count(codwork) from work;")
+    menos = isso.fetchall()
+    conn.commit()
+    conn.close()
+    return menos[0][0]

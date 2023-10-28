@@ -81,7 +81,13 @@ def list_project_names():
 
 @app.route('/insert_sprint', methods=['GET'])
 def insert_sprint():
-    return render_template("insert-sprint.html")
+    mentiras = sprint.view_new_sprint_data()
+    total = work.total_works()
+    totalizante = {
+        "words_writen": mentiras,
+        "sao_paulo": total
+    }
+    return render_template("insert-sprint.html", value=totalizante)
 
 
 

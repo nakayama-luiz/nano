@@ -1,46 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new word count</title>
-</head>
-<body>
-    <form id="myForm" action="http://localhost:5000/add_sprint" method="post">
-    <select name="nao" id="ocrime">
-    </select>
-    <script>
-        function maior(){
-            const selectElement = document.getElementById("ocrime");
-            const selectedOption = selectElement.options[selectElement.selectedIndex];
-            const selectedValue = selectedOption.value;
-            console.log(selectedValue);
-        }
-        fetch('http://localhost:5000/list_project_name')
-            .then(function (response) {
-                return response.json();
-            }).then(function (apiJsonData) {
-                renderOptions(apiJsonData);
-            })
-            const myOptions =document.getElementById("ocrime");
-            
-        function renderOptions(geral){
-            console.log(geral);
-            geral.forEach((gerals)=> {
-                    let option = document.createElement("option")
-                    console.log(gerals)
-                    option.text = gerals.work_name;
-                    option.value = gerals.work_id;
-                    myOptions.appendChild(option);
-            })
-        }
-        
-    </script>
-    
-    <input type="text" class="form-control textbox-dg" name="word-count"
-    placeholder="Start Date">
-        <input onclick="maior()" type="submit" value="nebturas">
-    </form> 
+<html>
 
+<head>
+    <title>Sucesso!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<style>
+    body{
+      background-image: url('https://lh3.googleusercontent.com/ci/ALr3YSFbHkD8dE5V0sYO3n2bIhDv_9olTbi8tx1UKSQvGrWQIoItyFe1lgkxDn37H9wyvZ6AKilQo6k=s1200');
+    }
+    .centralizaar {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+    }
+    .a {
+        text-decoration: none;
+    }
+</style>
+<body>
+    <script>
+        function resetForm() {
+            document.getElementById("myForm").reset();
+            return false; 
+        }
+    </script>
+    <div class="container mt-5">
+        <div class="card-body" role="alert">
+            <!-- <div class="centralizaar">
+                <a class="btn" href="http://localhost:5000/home" style="font-size: xx-large;">RETORNE AO MENU</a>
+            </div> -->
+            <div class="centralizaar">
+                <div class="card shadow" style="width: 80%;">
+                    <div class="card-body" style="width: auto;">
+                        <div class="container">
+                            <div class="clearfix">
+                                <div class="centralizaar">
+                                    <h1>New Sprint</h1>
+                                </div>
+                                    <hr>
+                                    <form id="myForm" action="http://localhost:5000/add_sprint" method="post">
+                                <div class="row">
+        
+                                   
+                                    <div class="col-6">
+                                        <label for="">Words written</label>
+                                        <input type="number" min="1" class="form-control textbox-dg" name="word-count"  placeholder="Word-Count" >
+                                    </div>
+                                    <div class="col-md-6 centralizaar" style="margin-top: auto;">
+                                        <h5>Total words written: {{value.words_writen}}</h5>
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6 form-floating">
+                                        
+                                        <label for="floatingSelect">Project</label>
+                                        <select style="width: 100%; cursor: pointer; border-radius: 5px; padding: 5px;" class="form-select textbox-dg"  name="nao" id="ocrime"></select>
+                                    </div>
+                                    <div class="col-md-6 centralizaar" style="margin-top: auto;" >
+                                        <h5>Number of created projects: {{value.sao_paulo}}</h5>
+                                    </div>
+                                </div>
+                                <br>
+                               <div class="row align-items-center">
+                                <div class="col-12 centralizaar" style="padding-top: 10px;">
+                                    <input onclick="maior()" style="width: 20%;" class="btn btn-primary btn-block logn-btn" type="submit" value="SAVE">
+                                    
+                                </div>
+                               </div>
+                                
+                                
+                            </div>
+                        </div>
+                            
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+            <!-- <input type="text" class="form-control textbox-dg" name="word-count"  placeholder="Start Date"> -->
+            <!-- <input onclick="maior()" class="btn btn-primary btn-block logn-btn" type="submit" value="save"> -->
+            <script>
+                function maior(){
+                    const selectElement = document.getElementById("ocrime");
+                    const selectedOption = selectElement.options[selectElement.selectedIndex];
+                    const selectedValue = selectedOption.value;
+                    console.log(selectedValue);
+                }
+                fetch('http://localhost:5000/list_project_name')
+                    .then(function (response) {
+                        return response.json();
+                    }).then(function (apiJsonData) {
+                        renderOptions(apiJsonData);
+                    })
+                    const myOptions =document.getElementById("ocrime");
+                    
+                function renderOptions(geral){
+                    console.log(geral);
+                    geral.forEach((gerals)=> {
+                            let option = document.createElement("option")
+                            console.log(gerals)
+                            option.text = gerals.work_name;
+                            option.value = gerals.work_id;
+                            myOptions.appendChild(option);
+                    })
+                }
+                
+            </script>
 </body>
 </html>
