@@ -49,6 +49,18 @@ def update_work_total(id):
     conn.commit()
     conn.close()
 
+def to_write(id):
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+    apossentado = cursor.execute(f"select w.meta  from work w where w.codwork = {id}")
+    isso = apossentado.fetchone()
+    conn.commit()
+    conn.close()
+    return isso[0]
+
+def diaria(id):
+    return float(to_write(id)/30)
+
 def total_works():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()

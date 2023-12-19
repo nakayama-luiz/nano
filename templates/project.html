@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/htmx.org@1.9.7"></script>
+</head>
+<body>
+    <script src="https://unpkg.com/htmx.org@1.9.7">
+
+
+        <div hx-get="http://localhost:5000/all_works">Get Some HTML</div>
+    </script>
+    <h3 >Nome: {{proje.name}}</h3>
+
+    <h3>Total de palavras escritas: {{proje.total}}</h3>
+    <h3>Meta: {{proje.goal}}</h3>
+    <h3>Quantas precisa escrever{{proje.diaria}}</h3>
+</body>
+</html>

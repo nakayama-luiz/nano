@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Sucesso!</title>
+    <title>Projetos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
@@ -41,7 +41,7 @@
                     if(mentiras === 1){
                         let link = document.createElement("a");
                         // cell.innerText = value;
-                        link.href = "google.com" + todo[0]; 
+                        link.href = "http://localhost:5000/work/" + todo[0]; 
                         link.innerText = value;
                         cell.style.textAlign = "center";
                         cell.appendChild(link);
@@ -73,18 +73,25 @@
                         
                     </div>
                     <hr>
-                    <div class="centralizaar">
-                        <div id="data-table">
-                            <table id="html-data-table">
-                                <tr>
-                                    <th style="padding: 15px; text-align: center;">ID</th>
-                                    <th style="padding: 15px; text-align: center;">title</th>
-                                    <th style="padding: 15px; text-align: center;">words total</th>
-                                    <th style="padding: 15px; text-align: center;">goal</th>
-                                </tr>
-                            </table>    
+                    <div class="container">
+                        <div class="centralizaar">
+                            <div id="data-table">
+                                <table id="html-data-table">
+                                    <tr>
+                                        <th style="padding: 15px; text-align: center;">ID</th>
+                                        <th style="padding: 15px; text-align: center;">title</th>
+                                        <th style="padding: 15px; text-align: center;">words total</th>
+                                        <th style="padding: 15px; text-align: center;">goal</th>
+                                    </tr>
+                                </table>    
+                            </div>
+                        </div>
+                        <div class="row justify-content-between">
+                                <a style="display: flex; justify-content: end;" href="http://localhost:5000/work_control">CREATE</a>
+                                <a href="http://localhost:5000/" style="display: flex; justify-content: start; ">VOLTAR</a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>

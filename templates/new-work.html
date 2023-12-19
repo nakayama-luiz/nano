@@ -28,6 +28,10 @@
             document.getElementById("myForm").reset();
             return false; 
         }
+        function funciions(){
+            let inicio = document.getElementById("work_start_date").valueAsDate;
+            console.log(inicio);
+        }
     </script>
     <div class="container mt-5">
         <div class="card-body" role="alert">
@@ -46,7 +50,7 @@
 
     
                         </div>
-                        <hr style="height: 10px; color: black;">
+                        <hr>
 
                         <div class="container">
                             <div class="row">
@@ -58,7 +62,6 @@
                                     <h2>Start date</h2>
                                 </div>
                                 
-                                
                             </div>
 
                             <form id="myForm" action="http://localhost:5000/create_work" method="post">
@@ -68,7 +71,7 @@
                                         placeholder="Project Name">
                                 </div>
                                 <div class="col-6">
-                                    <input type="date" class="form-control textbox-dg" name="work_S_date"
+                                    <input required id="work_start_date" type="date" class="form-control textbox-dg" name="work_S_date"
                                         placeholder="Start Date">
                                 </div>
                             </div>
@@ -83,7 +86,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <input required type="text" class="form-control textbox-dg" name="word_goal"
+                                    <input required type="number" class="form-control textbox-dg" name="word_goal"
                                         placeholder="Goal">
                                 </div>
                                 <div class="col-6">
@@ -111,6 +114,7 @@
             </div>
         </div>
     </div>
+   
 </body>
 
 </html>
