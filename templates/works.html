@@ -30,7 +30,6 @@
                 renderDataInTheTable(apiJsonData);
             })
 
-           // https://jsonplaceholder.typicode.com/todos
         function renderDataInTheTable(todos) {
             const mytable = document.getElementById("html-data-table");
             let mentiras = 0;
@@ -70,7 +69,6 @@
                 <div class="card-body" role="alert">
                     <div class="centralizaar">
                         <h2 style=" font-weight: bold;" class="alert-heading">WORK LIST</h2>
-                        
                     </div>
                     <hr>
                     <div class="container">
@@ -86,12 +84,10 @@
                                 </table>    
                             </div>
                         </div>
-                        <div class="row justify-content-between">
-                                <a style="display: flex; justify-content: end;" href="http://localhost:5000/work_control">CREATE</a>
-                                <a href="http://localhost:5000/" style="display: flex; justify-content: start; ">VOLTAR</a>
+                        <div class="row">
+                                <a style="display: flex; justify-content: end;" href="http://localhost:5000/work_control">VOLTAR</a>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>

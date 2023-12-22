@@ -96,6 +96,10 @@ def works():
 
 @app.route('/work_control')
 def create_work():
+    return render_template("central_carnes.html")
+
+@app.route('/insert_new_work')
+def criafendas():
     return render_template("new-work.html")
 
 @app.route('/list_project_name', methods=['GET'])
