@@ -52,7 +52,7 @@ def update_work_total(id):
 def to_write(id):
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
-    apossentado = cursor.execute(f"select w.meta  from work w where w.codwork = {id}")
+    apossentado = cursor.execute(f"select w.meta from work w where w.codwork = {id}")
     isso = apossentado.fetchone()
     conn.commit()
     conn.close()

@@ -2,11 +2,11 @@ import base64
 from io import BytesIO
 import io
 from flask import Flask, render_template, request, redirect, jsonify, send_file
+from flask_cors import CORS
 import sqlite3
 from PIL import Image
 import work
 import sprint
-from flask_cors import CORS
 
 app = Flask(__name__, static_url_path='/static')
 CORS(app)
@@ -130,4 +130,4 @@ def insert_sprint():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
